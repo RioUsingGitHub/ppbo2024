@@ -1,4 +1,3 @@
 # ppbo2024
-hehehe
 
-satrio nama saya
+Developed by Satrio Matin Makarim Wicaksono H1101231039
