@@ -38,4 +38,10 @@ echo "Keliling tanah Budi adalah: {$keliling_tanah}\n";
 echo "Volume bola adalah: {$volume_bola}\n";
 echo "Volume tabung adalah: {$volume_tabung}\n";
 echo "Volume kerucut adalah: {$volume_kerucut}\n";
+
+$nasi_tumpeng = new Rumus();
+
+$nasi_tumpeng = $hitung->volumeKerucut(4, 10);
+
+echo "\nVolume dari Nasi Tumpeng kurang lebih: {$nasi_tumpeng}\n";
 ?>
