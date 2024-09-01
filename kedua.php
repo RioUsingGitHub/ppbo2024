@@ -1,47 +1,69 @@
 <?php
 
-class Rumus {
+class BangunRuang {
+    protected $phi = 3.14;
+    protected $jari;
 
-    private $phi = 3.14;
-
-    public function luasLingkaran($jari) : float {
-        return $this->phi * pow($jari, 2);
-    }
-
-    public function kelilingLingkaran($jari) : float {
-        return 2 * $this->phi * $jari;
-    }
-
-    public function volumeBola($jari) : float {
-        return (4/3) * $this->phi * pow($jari, 3);
-    }
-
-    public function volumeTabung($jari, $tinggi) : float {
-        return $this->phi * pow($jari, 2) * $tinggi;
-    }
-
-    public function volumeKerucut($jari, $tinggi) : float {
-        return (1/3) * $this->phi * pow($jari, 2) * $tinggi;
+    public function __construct($jari) {
+        $this->jari = $jari;
     }
 }
 
-$hitung = new Rumus();
+class Lingkaran extends BangunRuang {
+    public function luasLingkaran() : float {
+        return $this->phi * pow($this->jari, 2);
+    }
 
-$luas_tanah = $hitung->luasLingkaran(45);
-$keliling_tanah = $hitung->kelilingLingkaran(45);
-$volume_bola = $hitung->volumeBola(45);
-$volume_tabung = $hitung->volumeTabung(45, 25);
-$volume_kerucut = $hitung->volumeKerucut(45, 25);
+    public function kelilingLingkaran() : float {
+        return 2 * $this->phi * $this->jari;
+    }
+}
 
-echo "Luas tanah Budi adalah: {$luas_tanah}\n";
-echo "Keliling tanah Budi adalah: {$keliling_tanah}\n";
-echo "Volume bola adalah: {$volume_bola}\n";
-echo "Volume tabung adalah: {$volume_tabung}\n";
-echo "Volume kerucut adalah: {$volume_kerucut}\n";
+class Bola extends BangunRuang {
+    public function volumeBola() : float {
+        return (4/3) * $this->phi * pow($this->jari, 3);
+    }
+}
 
-$nasi_tumpeng = new Rumus();
+class Tabung extends BangunRuang {
+    protected $tinggi;
 
-$nasi_tumpeng = $hitung->volumeKerucut(4, 10);
+    public function __construct($jari, $tinggi) {
+        parent::__construct($jari);
+        $this->tinggi = $tinggi;
+    }
 
-echo "\nVolume dari Nasi Tumpeng kurang lebih: {$nasi_tumpeng}\n";
+    public function volumeTabung() : float {
+        return $this->phi * pow($this->jari, 2) * $this->tinggi;
+    }
+}
+
+class Kerucut extends BangunRuang {
+    protected $tinggi;
+
+    public function __construct($jari, $tinggi) {
+        parent::__construct($jari);
+        $this->tinggi = $tinggi;
+    }
+
+    public function volumeKerucut() : float {
+        return (1/3) * $this->phi * pow($this->jari, 2) * $this->tinggi;
+    }
+}
+
+$lingkaran = new Lingkaran(45);
+echo "Luas Lingkaran: " . $lingkaran->luasLingkaran() . "\n";
+echo "Keliling Lingkaran: " . $lingkaran->kelilingLingkaran() . "\n";
+
+$bola = new Bola(45);
+echo "Volume Bola: " . $bola->volumeBola() . "\n";
+
+$tabung = new Tabung(45, 25);
+echo "Volume Tabung: " . $tabung->volumeTabung() . "\n";
+
+$kerucut = new Kerucut(45, 25);
+echo "Volume Kerucut: " . $kerucut->volumeKerucut() . "\n";
+
+$nasi_tumpeng = new Kerucut(4, 10);
+echo "\nVolume dari Nasi Tumpeng kurang lebih: " . $nasi_tumpeng->volumeKerucut() . "\n";
 ?>
