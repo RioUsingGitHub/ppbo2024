@@ -1,0 +1,19 @@
+{
+    "name": "riousinggithub/ppbo2024",
+    "description": "Pemrograman Berorientasi Objek",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "RioUsingGitHub",
+            "email": "riomatin04@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4":{
+            "App\\":"App"
+        }
+    }
+
+}
