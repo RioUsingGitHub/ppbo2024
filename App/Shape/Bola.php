@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Shape;
+
 class Bola extends BangunRuang {
 
     public function __construct($jari) {

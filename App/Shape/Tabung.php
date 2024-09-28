@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Shape;
+
 class Tabung extends BangunRuang {
     protected $tinggi;
 

@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Guest;
+
 class HomePage
 {
     public function tampil() : void {

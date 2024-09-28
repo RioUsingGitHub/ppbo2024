@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Model\Pustaka;
+
 class Book {
     public int $ISBN;
     public string $title;

@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Model\Pustaka;
+
 class Publisher {
     public string $name;
     public string $address;
@@ -27,4 +29,3 @@ class Publisher {
         ];
     }
 }
-?>

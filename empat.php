@@ -1,8 +1,10 @@
 <?php
 
-require_once 'classgroup/Author.php';
-require_once 'classgroup/Book.php';
-require_once 'classgroup/Publisher.php';
+require_once 'vendor/autoload.php';
+
+use App\Model\Pustaka\Author;
+use App\Model\Pustaka\Publisher;
+use App\Model\Pustaka\Book;
 
 $author = new Author("J.K. Rowling", "J.K. Rowling adalah penulis seri Harry Potter.");
 

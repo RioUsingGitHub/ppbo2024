@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Shape;
+
 class BangunRuang {
     protected $phi = 3.14;
     protected $jari;

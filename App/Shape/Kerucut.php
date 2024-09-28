@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Shape;
+
 class Kerucut extends BangunRuang {
     protected $tinggi;
 

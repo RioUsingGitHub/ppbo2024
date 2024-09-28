@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Shape;
+
 class Lingkaran extends BangunRuang {
 
     public function __construct($jari) {
